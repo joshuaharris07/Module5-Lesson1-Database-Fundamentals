@@ -1,0 +1,28 @@
+Task 1: Database Schema Design
+
+- Books Table:
+  - id (INT, Primary Key)
+  - book_title (VARCHAR(50) NOT NULL)
+  - author_id (INT NOT NULL) - Foreign Key 1 connected to Author Table Primary Key
+  - genre (VARCHAR(50))
+  - publication_year (YEAR)
+  - price (DECIMAL(10,2) NOT NULL)
+- Authors Table
+  - id (INT, Primary Key)
+  - name (VARCHAR(100) NOT NULL)
+- TransactionDetails Table
+  - order_id (INT, NOT NULL) - Foreign Key 1 connected to Transactions Table Primary Key
+  - book_id (INT, NOT NULL) - Foreign Key 2 connected to Book Table Primary Key
+  - quantity (INT, NOT NULL)
+  - price_per_book (DECIMAL(10,2), NOT NULL)
+- Transactions Table
+  - id (INT, Primary Key)
+  - customer_id (INT, NOT NULL) - Foreign Key connected to Customers Table Primary Key
+  - date (DATETIME, NOT NULL)
+  - total_amount (DECIMAL(10,2) NOT NULL)
+- Customers Table
+  - id (INT, Primary Key)
+  - name (VARCHAR(100) NOT NULL)
+  - address (VARCHAR(250) NOT NULL)
+  - email (VARCHAR(100) UNIQUE NOT NULL)
+  - phone (VARCHAR(15) NOT NULL)
